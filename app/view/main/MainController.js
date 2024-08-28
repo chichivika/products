@@ -15,51 +15,12 @@ Ext.define('products.view.main.MainController', {
     onAddProducts: function () {
         this._addNewTab();
     },
-    onFilterKeyPress: function (field, eventData) {
-        if (eventData.event.code !== 'Enter') return;
-
-        let name = field.name;
-        let filtersData = this._getData().filters;
-        let value = filtersData[name].value;
-
-        let view = this.getView();
-        let mainView = view.up('main');
-        let grid = mainView.down('table');
-        let store = grid.getStore();
-
-        switch (name) {
-            case 'id':
-                this._configIdFilter(value, store);
-                break
-            case 'name':
-                this._configNameFilter(value, store);
-                break;
+    renderNumberCell(value, item){
+        if(value === 0){
+            item.tdStyle += 'background-color: #ffa3a3';
+            console.log(value, item);
         }
-    },
-    _configIdFilter(value, store) {
-        store.removeFilter('id');
-        if(value.length === 0) return;
-
-        let filter = Ext.create('Ext.util.Filter', {
-            filterFn:  item => {
-                let data = item.data;
-                return String(data.id) === value;
-            },
-            id: 'id'
-        });
-        store.addFilter(filter);
-    },
-    _configNameFilter(value, store) {
-        store.removeFilter('name');
-        if(value.length === 0) return;
-
-        let filter = Ext.create('Ext.util.Filter', {
-            property: 'name',
-            value,
-            operator: 'like',
-            id: 'name'
-        });
-        store.addFilter(filter);
+        return value;
     },
     _addNewTab: function () {
         let panel = this.getView();
