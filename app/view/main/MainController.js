@@ -24,13 +24,17 @@ Ext.define('products.view.main.MainController', {
     _addNewTab: function () {
         let panel = this.getView();
 
+        let index = ++this._itemsNum;
         panel.add([{
             xtype: `tableCnt`
         }]);
-        panel.setActiveItem(++this._itemsNum);
+        panel.setActiveItem(index);
     },
     _getData: function () {
         let model = this.getViewModel();
         return model.data;
     },
+    onCellClick(){
+        alert('name click');
+    }
 });
