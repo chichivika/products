@@ -4,7 +4,6 @@ Ext.define('products.view.main.MainModel', {
     alias: 'viewmodel.main',
 
     data: {
-        title: 'Products table',
-        items: []  
+        title: 'Products table'
     }
 });

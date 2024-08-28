@@ -1,31 +1,16 @@
-Ext.define('products.view.main.MainController', {
+Ext.define('products.view.filters.FiltersController', {
     extend: 'Ext.app.ViewController',
 
-    alias: 'controller.main',
+    alias: 'controller.filters',
 
-    init: function () {
-        this.callParent();
-        this._itemsNum = 0;
-    },
-    onExit: function () {
-        localStorage.setItem("authorized", false);
-        this.getView().destroy();
-        Ext.create({ xtype: 'login' });
-    },
-    onAddProducts: function () {
-        this._addNewTab();
-    },
     onFilterKeyPress: function (field, eventData) {
         if (eventData.event.code !== 'Enter') return;
 
         let name = field.name;
-        let filtersData = this._getData().filters;
-        let value = filtersData[name].value;
-
-        let view = this.getView();
-        let mainView = view.up('main');
-        let grid = mainView.down('table');
-        let store = grid.getStore();
+        let data = this._getData();
+        let value = data[name].value;
+        
+        let store = this._getGridStore();
 
         switch (name) {
             case 'id':
@@ -61,21 +46,14 @@ Ext.define('products.view.main.MainController', {
         });
         store.addFilter(filter);
     },
-    _addNewTab: function () {
-        let panel = this.getView();
-        panel.add([{
-            title: 'products',
-            items: [{
-                xtype: 'filters'
-            },
-            {
-                xtype: 'table'
-            }]
-        }]);
-        panel.setActiveItem(++this._itemsNum);
-    },
     _getData: function () {
         let model = this.getViewModel();
         return model.data;
     },
+    _getGridStore(){
+        let view = this.getView();
+        let mainView = view.up('main');
+        let grid = mainView.down('table');
+        return grid.getStore();
+    }
 });

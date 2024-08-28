@@ -54,7 +54,7 @@ Ext.define('products.store.Products', {
                 id: 6,
                 name: 'Стереограммы',
                 description: 'Магический глаз. 75 стереограмм. Тренировка и восстановление зрения',
-                price: 310,
+                price: 544,
                 number: 0
             },
             {

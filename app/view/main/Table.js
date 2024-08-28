@@ -21,7 +21,7 @@ Ext.define('products.view.main.Table', {
     columns: [
         { text: 'ID',  dataIndex: 'id', width: 50 },
         { text: 'Name', dataIndex: 'name', width: 200 },
-        { text: 'Desc', dataIndex: 'description', width: 300 },
+        { text: 'Description', dataIndex: 'description', width: 300 },
         { text: 'Price', dataIndex: 'price', width: 100, xtype:'numbercolumn' },
         { text: 'Number', dataIndex: 'number', width: 100 }
     ],

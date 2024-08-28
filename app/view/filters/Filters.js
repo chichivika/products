@@ -4,12 +4,12 @@ Ext.define('products.view.main.Filters', {
     reference: 'filters',
 
     requires: [
-        'products.view.main.MainController',
-        'products.view.main.MainModel'
+        'products.view.filters.FiltersController',
+        'products.view.filters.FiltersModel'
     ],
 
-    controller: 'main',
-    viewModel: 'main',
+    controller: 'filters',
+    viewModel: 'filters',
 
     ui: 'navigation',
     style: {
@@ -23,15 +23,18 @@ Ext.define('products.view.main.Filters', {
         {
             xtype: 'textfield',
             name: 'id',
-            fieldLabel: 'ID',
             width: 200,
             labelAlign: 'top',
+            bind:{
+                fieldLabel: '{id.label}',
+                value: '{id.value}'
+            },
             style: {
                 marginRight: '30px',
                 boxSizing: 'border-box'
             },
             listeners: {
-                keyPress: 'onFilterKeyPress'
+                specialkey: 'onFilterKeyPress'
             }
         }, {
             xtype: 'textfield',
@@ -39,6 +42,10 @@ Ext.define('products.view.main.Filters', {
             fieldLabel: 'Name',
             labelAlign: 'top',
             width: 300,
+            bind:{
+                fieldLabel: '{name.label}',
+                value: '{name.value}'
+            },
             listeners: {
                 specialkey: 'onFilterKeyPress'
             }
