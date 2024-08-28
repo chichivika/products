@@ -1,4 +1,4 @@
-Ext.define('products.view.main.Filters', {
+Ext.define('products.view.filters.Filters', {
     extend: 'Ext.form.Panel',
     xtype: 'filters',
     reference: 'filters',

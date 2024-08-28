@@ -16,7 +16,7 @@ Ext.define('products.view.main.Main', {
     ui: 'navigation',
 
     header: {
-        layout:{
+        layout: {
             type: 'hbox'
         },
         title: {
@@ -31,7 +31,7 @@ Ext.define('products.view.main.Main', {
                 iconCls: 'x-fa fa-plus-circle',
                 iconAlign: 'right',
                 padding: 10,
-                style:{
+                style: {
                     borderColor: 'white'
                 },
                 listeners: {
@@ -44,7 +44,7 @@ Ext.define('products.view.main.Main', {
                 iconCls: 'x-fa fa-home',
                 iconAlign: 'right',
                 padding: 10,
-                style:{
+                style: {
                     margin: '0px 30px',
                     borderColor: 'white'
                 },
@@ -56,15 +56,8 @@ Ext.define('products.view.main.Main', {
     },
     activeItem: 0,
     items: [
-        {title: 'products',
-            items:[
-                {
-                    xtype: 'filters'
-                },
-                {
-                    xtype: 'table'
-                }
-            ]
+        {
+            xtype: 'tableCnt'
         }
     ]
 });

@@ -15,23 +15,17 @@ Ext.define('products.view.main.MainController', {
     onAddProducts: function () {
         this._addNewTab();
     },
-    renderNumberCell(value, item){
-        if(value === 0){
+    renderNumberCell(value, item) {
+        if (value === 0) {
             item.tdStyle += 'background-color: #ffa3a3';
-            console.log(value, item);
         }
         return value;
     },
     _addNewTab: function () {
         let panel = this.getView();
+
         panel.add([{
-            title: 'products',
-            items: [{
-                xtype: 'filters'
-            },
-            {
-                xtype: 'table'
-            }]
+            xtype: `tableCnt`
         }]);
         panel.setActiveItem(++this._itemsNum);
     },

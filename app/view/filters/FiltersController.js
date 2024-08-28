@@ -9,7 +9,7 @@ Ext.define('products.view.filters.FiltersController', {
         let name = field.name;
         let data = this._getData();
         let value = data[name].value;
-        
+
         let store = this._getGridStore();
 
         switch (name) {
@@ -52,8 +52,8 @@ Ext.define('products.view.filters.FiltersController', {
     },
     _getGridStore(){
         let view = this.getView();
-        let mainView = view.up('main');
-        let grid = mainView.down('table');
+        let tableCnt = view.up('tableCnt');
+        let grid = tableCnt.down('table');
         return grid.getStore();
     }
 });
