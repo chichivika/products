@@ -14,6 +14,7 @@ Ext.define('products.view.saveConfirmation.SaveConfirmation', {
         title: '{title}',
         html: '{message}'
     },
+    cls: 'save-confirm',
     constructor(config){
         let onAction = config.onAction;
         this.viewModel = Ext.create('products.view.saveConfirmation.SaveConfirmationModel');
