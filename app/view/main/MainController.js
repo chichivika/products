@@ -8,7 +8,7 @@ Ext.define('products.view.main.MainController', {
         this._itemsNum = 0;
     },
     onExit: function () {
-        localStorage.setItem("authorized", false);
+        localStorage.removeItem("authorized");
         this.getView().destroy();
         Ext.create({ xtype: 'login' });
     },

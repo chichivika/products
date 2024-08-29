@@ -6,17 +6,17 @@ Ext.define('products.view.table.TableModel', {
     data: {
         columns:
             [
-                { text: 'ID', dataIndex: 'id', width: 50 },
+                { text: 'ID', dataIndex: 'id', flex: 1 },
                 {
-                    text: 'Name', dataIndex: 'name', width: 200,
+                    text: 'Name', dataIndex: 'name', flex: 2,
                     listeners: {
                         click: 'onCellClick'
                     }
                 },
-                { text: 'Description', dataIndex: 'description', width: 300 },
-                { text: 'Price', dataIndex: 'price', width: 100, xtype: 'numbercolumn' },
+                { text: 'Description', dataIndex: 'description'},
+                { text: 'Price', dataIndex: 'price', flex: 1, xtype: 'numbercolumn' },
                 {
-                    text: 'Number', dataIndex: 'number', width: 100,
+                    text: 'Number', dataIndex: 'number', flex: 1,
                     renderer: 'renderNumberCell'
                 }
             ]

@@ -18,15 +18,6 @@ Ext.define('products.Application', {
     stores: [
         // TODO: add global / shared stores here
     ],
-    launch: function () {
-
-        // var isAuthorized = localStorage.getItem("authorized");
-
-        // Ext.create({
-        //     xtype: isAuthorized ? 'table' : 'login'
-        // });
-
-    },
 
     onAppUpdate: function () {
         Ext.Msg.confirm('Application Update', 'This application has an update, reload?',

@@ -8,6 +8,7 @@ Ext.define('products.view.main.TableCnt', {
 
     title: 'products',
     closable: true,
+    padding: '0 40',
     items: [
         {
             xtype: 'filters'

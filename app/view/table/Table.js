@@ -117,14 +117,7 @@ Ext.define('products.view.table.Table', {
 
     controller: 'table',
     viewModel: 'table',
-
-    ui: 'navigation',
     scrollable: true,
-    height: 400,
-    style: {
-        margin: '0px 30px',
-        boxSizing: 'border-box'
-    },
     bind: {
         columns: '{columns}'
     },
@@ -134,5 +127,8 @@ Ext.define('products.view.table.Table', {
         });
         this.callParent(arguments);
         return this;
+    },
+    listeners:{
+        resize: 'onResize'
     }
 });

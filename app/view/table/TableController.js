@@ -2,8 +2,21 @@ Ext.define('products.view.table.TableController', {
     extend: 'Ext.app.ViewController',
 
     alias: 'controller.table',
-    _window: null,
 
+    onResize (){
+        let view = this.getView();
+        let cnt = view.up();
+        let fullHeight = cnt.getHeight();
+        let items = cnt.getRefItems();
+        items.forEach(item=>{
+            if(item.xtype === 'table') return;
+            fullHeight -= item.getHeight();
+        });
+
+        fullHeight -= 20;
+        fullHeight > 0 ? fullHeight : 0;
+        view.setHeight(fullHeight);
+    },
     renderNumberCell(value, item) {
         if (value === 0 && item) {
             item.tdStyle += 'background-color: #ffa3a3';

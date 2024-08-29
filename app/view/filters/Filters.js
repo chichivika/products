@@ -11,13 +11,10 @@ Ext.define('products.view.filters.Filters', {
     controller: 'filters',
     viewModel: 'filters',
 
-    ui: 'navigation',
-    style: {
-        margin: '20px 30px'
-    },
+    padding: '20 0',
     layout: {
         type: 'hbox',
-        align: 'stretch'
+        align: 'middle'
     },
     items: [
         {
@@ -29,10 +26,7 @@ Ext.define('products.view.filters.Filters', {
                 fieldLabel: '{id.label}',
                 value: '{id.value}'
             },
-            style: {
-                marginRight: '30px',
-                boxSizing: 'border-box'
-            },
+            margin: '0 30',
             listeners: {
                 specialkey: 'onFilterKeyPress'
             }
@@ -41,7 +35,7 @@ Ext.define('products.view.filters.Filters', {
             name: 'name',
             fieldLabel: 'Name',
             labelAlign: 'top',
-            width: 300,
+            width: 250,
             bind:{
                 fieldLabel: '{name.label}',
                 value: '{name.value}'
