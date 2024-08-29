@@ -3,9 +3,10 @@ Ext.define('products.view.productWindow.ProductWindow', {
     xtype: 'productWindow',
     reference: 'productWindow',
 
-    requires: ['products.view.productWindow.ProductWindowModel'],
+    requires: ['products.view.productWindow.ProductWindowController',
+        'products.view.productWindow.ProductWindowModel'],
 
-    viewModel: 'productWindow',
+    controller: 'productWindow',
 
     modal: true,
     bodyPadding: 50,
@@ -14,32 +15,43 @@ Ext.define('products.view.productWindow.ProductWindow', {
         title: '{title}'
     },
     constructor(config) {
+        this.viewModel = Ext.create('products.view.productWindow.ProductWindowModel');
+        this.viewModel.set('product', { ...config.product });
+        this.viewModel.set('initialProduct', { ...config.product });
+
         this.items = [
             {
                 xtype: 'productCard',
-                product: config.product
+                model: this.viewModel
             }
         ];
         this.buttons = [
             {
-                text: 'Cancel',
+                bind:{
+                    text: '{buttons.cancel}',
+                },
                 listeners: {
-                    click: ()=>{
+                    click: () => {
                         config.onAction('close');
                     }
                 }
             },
             {
-                text: 'Save',
+                bind: {
+                    text: '{buttons.save}',
+                    disabled: '{areChanges}'
+                },
                 listeners: {
-                    click: ()=>{
-                        config.onAction('save');
+                    click: () => {
+                        this.controller.onSave({
+                            callback: config.onAction
+                        });
                     }
                 }
             }
         ],
 
-        this.callParent(config);
+            this.callParent(config);
         return this;
-    },
+    }
 });

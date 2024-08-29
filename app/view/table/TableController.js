@@ -5,7 +5,7 @@ Ext.define('products.view.table.TableController', {
     _window: null,
 
     renderNumberCell(value, item) {
-        if (value === 0) {
+        if (value === 0 && item) {
             item.tdStyle += 'background-color: #ffa3a3';
         }
         return value;

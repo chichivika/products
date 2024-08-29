@@ -4,18 +4,12 @@ Ext.define('products.view.productCard.ProductCard', {
     reference: 'productCard',
 
     requires: [
-        'products.view.productCard.ProductCardController',
-        'products.view.productCard.ProductCardModel'
     ],
 
-    controller: 'productCard',
-
     constructor(config){
-        this.callParent(config);
+        this.viewModel = config.model;
 
-        this.viewModel = Ext.create('products.view.productCard.ProductCardModel');
-        this.viewModel.set('product', config.product);
-        this._initialProduct = config.product;
+        this.callParent(config);
         return this;
     },
     items: [
