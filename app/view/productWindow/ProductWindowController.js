@@ -4,6 +4,12 @@ Ext.define('products.view.productWindow.ProductWindowController', {
     alias: 'controller.productWindow',
 
     onSave(param) {
+        let data = this._getData();
+        if(!data.areChanges){
+            Ext.Msg.alert('No changes','There are no changes.');
+            return;
+        }
+
         let window = Ext.create({
             xtype: 'saveConfirmation',
             changes: this._getChanges(),

@@ -5,27 +5,26 @@ Ext.define('products.view.productCard.ProductCard', {
 
     requires: [
     ],
-
+    bodyPadding: 50,
     constructor(config){
         this.viewModel = config.model;
+        this.buttons = config.buttons;
 
         this.callParent(config);
         return this;
     },
     items: [
         {
-            xtype: 'textfield',
+            xtype: 'displayfield',
             name: 'id',
-            readOnly: true,
             bind: {
                 fieldLabel: '{items.id.label}',
                 value: '{product.id}'
             }
         },
         {
-            xtype: 'textfield',
+            xtype: 'displayfield',
             name: 'name',
-            readOnly: true,
             bind: {
                 fieldLabel: '{items.name.label}',
                 value: '{product.name}'
@@ -35,6 +34,9 @@ Ext.define('products.view.productCard.ProductCard', {
             xtype: 'numberfield',
             name: 'price',
             minValue: 0,
+            step: 100,
+            allowBlank: false,
+            allowNegative: false,
             bind: {
                 fieldLabel: '{items.price.label}',
                 value: '{product.price}'
@@ -44,7 +46,10 @@ Ext.define('products.view.productCard.ProductCard', {
             xtype: 'numberfield',
             name: 'number',
             minValue: 0,
-            stepValue: 1,
+            step: 1,
+            allowBlank: false,
+            allowDecimals: false,
+            allowNegative: false,
             bind: {
                 fieldLabel: '{items.number.label}',
                 value: '{product.number}'

@@ -29,12 +29,12 @@ Ext.define('products.view.productWindow.ProductWindowModel', {
     formulas: {
         areChanges: get => {
             if(get('product.price') !== get('initialProduct.price')){
-                return false;
+                return true;
             }
             if(get('product.number') !== get('initialProduct.number')){
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
     },
 });

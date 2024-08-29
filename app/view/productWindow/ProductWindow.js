@@ -9,7 +9,6 @@ Ext.define('products.view.productWindow.ProductWindow', {
     controller: 'productWindow',
 
     modal: true,
-    bodyPadding: 50,
     closable: false,
     bind: {
         title: '{title}'
@@ -22,36 +21,37 @@ Ext.define('products.view.productWindow.ProductWindow', {
         this.items = [
             {
                 xtype: 'productCard',
-                model: this.viewModel
+                model: this.viewModel,
+                buttons: [
+                    {
+                        bind: {
+                            text: '{buttons.cancel}',
+                        },
+                        listeners: {
+                            click: () => {
+                                config.onAction('close');
+                            }
+                        }
+                    },
+                    {
+                        bind: {
+                            text: '{buttons.save}',
+                            // disabled: '!{areChanges}'
+                        },
+                        formBind: true,
+                        listeners: {
+                            click: () => {
+                                this.controller.onSave({
+                                    callback: config.onAction
+                                });
+                            }
+                        }
+                    }
+                ]
             }
         ];
-        this.buttons = [
-            {
-                bind:{
-                    text: '{buttons.cancel}',
-                },
-                listeners: {
-                    click: () => {
-                        config.onAction('close');
-                    }
-                }
-            },
-            {
-                bind: {
-                    text: '{buttons.save}',
-                    disabled: '{areChanges}'
-                },
-                listeners: {
-                    click: () => {
-                        this.controller.onSave({
-                            callback: config.onAction
-                        });
-                    }
-                }
-            }
-        ],
 
-            this.callParent(config);
+        this.callParent(config);
         return this;
     }
 });
