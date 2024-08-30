@@ -3,6 +3,7 @@ Ext.define('products.view.filters.FiltersController', {
 
     alias: 'controller.filters',
 
+    //event listener filter submit
     onFilterKeyPress: function (field, eventData) {
         if (eventData.event.code !== 'Enter') return;
 
@@ -21,6 +22,7 @@ Ext.define('products.view.filters.FiltersController', {
                 break;
         }
     },
+    //configuration of filter by id field
     _configIdFilter(value, store) {
         store.removeFilter('id');
         if(value.length === 0) return;
@@ -34,6 +36,7 @@ Ext.define('products.view.filters.FiltersController', {
         });
         store.addFilter(filter);
     },
+    //configuration of filter by name field
     _configNameFilter(value, store) {
         store.removeFilter('name');
         if(value.length === 0) return;
@@ -46,10 +49,12 @@ Ext.define('products.view.filters.FiltersController', {
         });
         store.addFilter(filter);
     },
+    //get view model data
     _getData: function () {
         let model = this.getViewModel();
         return model.data;
     },
+    //get store for filter
     _getGridStore(){
         let view = this.getView();
         let tableCnt = view.up('tableCnt');

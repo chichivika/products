@@ -50,7 +50,9 @@ Ext.define('products.view.login.Login', {
             }
             ],
             buttons: [{
-                text: 'Enter',
+                bind:{
+                    text: 'buttons.enter'
+                },
                 formBind: true,
                 listeners: {
                     click: 'onEnter'

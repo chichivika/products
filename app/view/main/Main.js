@@ -6,7 +6,8 @@ Ext.define('products.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'products.view.main.MainController',
-        'products.view.main.MainModel'
+        'products.view.main.MainModel',
+        'products.view.main.TableCnt'
     ],
 
     controller: 'main',
@@ -27,8 +28,10 @@ Ext.define('products.view.main.Main', {
         items: [
             {
                 xtype: 'button',
-                text: 'products',
-                iconCls: 'x-fa fa-plus-circle',
+                bind:{
+                    text: '{buttons.add.text}',
+                    iconCls: '{buttons.add.iconCls}',
+                },
                 iconAlign: 'right',
                 padding: 10,
                 style: {
@@ -40,8 +43,10 @@ Ext.define('products.view.main.Main', {
             },
             {
                 xtype: 'button',
-                text: 'Exit',
-                iconCls: 'x-fa fa-home',
+                bind:{
+                    text: '{buttons.exit.text}',
+                    iconCls: '{buttons.exit.iconCls}',
+                },
                 iconAlign: 'right',
                 padding: 10,
                 style: {

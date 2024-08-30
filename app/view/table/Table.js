@@ -118,6 +118,9 @@ Ext.define('products.view.table.Table', {
     controller: 'table',
     viewModel: 'table',
     scrollable: true,
+    scrollFlags:{
+        both: true
+    },
     bind: {
         columns: '{columns}'
     },

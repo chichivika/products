@@ -16,6 +16,9 @@ Ext.define('products.view.login.LoginModel', {
         message: {
             text: 'Incorrect login or password!',
             title: 'Error'
+        },
+        buttons: {
+            enter: 'Enter'
         }
     }
 });
