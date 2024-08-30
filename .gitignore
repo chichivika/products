@@ -1,7 +1,6 @@
 /build
 /ext
 /overrides
-/sass
 bootstrap.css
 bootstrap.js
 bootstrap.json
