@@ -2,6 +2,8 @@
 
 Desktop application for products analysis and modification using Extjs 6.0.0.
 
+See [DEMO](https://chichivika.github.io/products/).
+
 ## Installation
 
 1. [Download](https://www.sencha.com/products/extjs/evaluate/) sencha cmd (trial version).
