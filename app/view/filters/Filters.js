@@ -16,6 +16,7 @@ Ext.define('products.view.filters.Filters', {
         type: 'hbox',
         align: 'middle'
     },
+    cls: 'app-filters',
     items: [
         {
             xtype: 'textfield',

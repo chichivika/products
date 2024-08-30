@@ -119,7 +119,7 @@ Ext.define('products.view.table.Table', {
     viewModel: 'table',
     scrollable: true,
     scrollFlags:{
-        both: true
+        y: true
     },
     cls: 'app-table',
     layout: 'fit',
