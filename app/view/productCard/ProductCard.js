@@ -7,7 +7,9 @@ Ext.define('products.view.productCard.ProductCard', {
     ],
     bodyPadding: 50,
     constructor(config){
+        //model for binding
         this.viewModel = config.model;
+        //buttons of the form
         this.buttons = config.buttons;
 
         this.callParent(config);

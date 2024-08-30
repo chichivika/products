@@ -5,6 +5,10 @@ Ext.define('products.view.productWindow.ProductWindowModel', {
 
     data: {
         title: 'Product card',
+        noChanges: {
+            title: 'No changes',
+            message: 'There are no changes.'
+        },
         items: {
             id: {
                 label: 'ID'
