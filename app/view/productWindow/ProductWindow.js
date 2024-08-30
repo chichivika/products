@@ -4,7 +4,10 @@ Ext.define('products.view.productWindow.ProductWindow', {
     reference: 'productWindow',
 
     requires: ['products.view.productWindow.ProductWindowController',
-        'products.view.productWindow.ProductWindowModel'],
+        'products.view.productWindow.ProductWindowModel',
+        'products.view.productCard.ProductCard',
+        'products.view.saveConfirmation.SaveConfirmation'
+    ],
 
     controller: 'productWindow',
 

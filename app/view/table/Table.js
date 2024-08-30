@@ -112,7 +112,9 @@ Ext.define('products.view.table.Table', {
 
     requires: [
         'products.view.table.TableController',
-        'products.view.table.TableModel'
+        'products.view.table.TableModel',
+        'products.store.Products',
+        'products.view.productWindow.ProductWindow'
     ],
 
     controller: 'table',

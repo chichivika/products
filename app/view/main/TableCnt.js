@@ -4,6 +4,8 @@ Ext.define('products.view.main.TableCnt', {
     reference: 'tableCnt',
 
     requires: [
+        'products.view.filters.Filters',
+        'products.view.table.Table'
     ],
 
     title: 'products',
