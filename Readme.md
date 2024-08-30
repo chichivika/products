@@ -10,10 +10,7 @@ Desktop application for products analysis and modification using Extjs 6.0.0.
 
 3. Clone repository (git clone https://github.com/chichivika/products) .
 
-4. Download Extjs version 6.0.0 and put into the root of your project.
-You can use this repo https://github.com/chichivika/ext6.0.0.640 for downloading.
-
-5. In the folder of the project do "sencha app watch" command for starting the app. You will see it at http://localhost:1841 .
+4. In the folder of the project do "sencha app watch" command for starting the app. You will see it at http://localhost:1841 .
 
 ## How it works
 
