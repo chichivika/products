@@ -121,6 +121,8 @@ Ext.define('products.view.table.Table', {
     scrollFlags:{
         both: true
     },
+    cls: 'app-table',
+    layout: 'fit',
     bind: {
         columns: '{columns}'
     },
@@ -132,6 +134,6 @@ Ext.define('products.view.table.Table', {
         return this;
     },
     listeners:{
-        resize: 'onResize'
+         resize: 'onResize'
     }
 });
